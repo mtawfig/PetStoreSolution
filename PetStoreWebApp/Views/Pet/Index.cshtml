@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Pet>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Date of Birth</th>
+            <th>Color</th>
+            <th>Description</th>
+            <th>Photo</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pet in Model)
+        {
+            <tr>
+                <td>@pet.Name</td>
+                <td>@pet.Type</td>
+                <td>@pet.DateOfBirth.ToShortDateString()</td>
+                <td>@pet.Color</td>
+                <td>@pet.Description</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(pet.PhotoPath))
+                    {
+                        <img src="@pet.PhotoPath" alt="Pet photo" width="100" />
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@pet.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@pet.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

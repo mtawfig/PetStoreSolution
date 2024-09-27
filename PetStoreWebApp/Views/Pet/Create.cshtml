@@ -1,0 +1,29 @@
+﻿@model Pet
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label>Type</label>
+        <input asp-for="Type" />
+    </div>
+    <div>
+        <label>Date of Birth</label>
+        <input asp-for="DateOfBirth" type="date" />
+    </div>
+    <div>
+        <label>Color</label>
+        <input asp-for="Color" />
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea asp-for="Description"></textarea>
+    </div>
+    <div>
+        <label>Photo</label>
+        <input type="file" name="photo" />
+    </div>
+    <button type="submit">Create</button>
+</form>

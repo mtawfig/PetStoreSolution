@@ -1,0 +1,13 @@
+﻿@model User
+
+<form asp-action="Register">
+    <div>
+        <label>Username</label>
+        <input asp-for="Username" />
+    </div>
+    <div>
+        <label>Password</label>
+        <input asp-for="Password" type="password" />
+    </div>
+    <button type="submit">Register</button>
+</form>
